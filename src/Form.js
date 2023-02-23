@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 class Form extends Component {
   state = {
     name: "",
-    dob: "",
+    dob: null,
     email: "",
     contact: "",
     about: "",
@@ -191,7 +191,7 @@ class Form extends Component {
 
       this.setState({
         name: "",
-        dob: "",
+        dob: null,
         email: "",
         contact: "",
         about: "",
