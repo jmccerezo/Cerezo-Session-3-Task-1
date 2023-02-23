@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import "./Display.css"
+import "./Display.css";
 
 const Display = ({ personData }) => {
   const personList = personData.map((person, i) => {
@@ -15,9 +15,13 @@ const Display = ({ personData }) => {
               {person.name}
             </Typography>
             <Typography variant="body2">
-              {new Date(person.dob).toLocaleDateString()}
+              Date of Birth: {new Date(person.dob).toLocaleDateString()}
               <br />
-              {person.contact}
+              Email Address: {person.email}
+              <br />
+              Contact Number: {person.contact}
+              <br />
+              About me: {person.about}
             </Typography>
           </CardContent>
         </Card>
