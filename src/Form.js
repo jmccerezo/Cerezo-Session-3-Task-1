@@ -42,8 +42,8 @@ class Form extends Component {
 
   // * Validations
   validateName(name) {
-    let formIsValid = this.state.formValid;
-    let nameError = this.state.error.emailError;
+    let formIsValid = this.state.formIsValid;
+    let nameError = this.state.error.nameError;
     let alphabets = /^[A-Za-z ]+$/;
 
     if (name.trim() === "") {
@@ -70,8 +70,8 @@ class Form extends Component {
   }
 
   validateDOB(dob) {
-    let formIsValid = this.state.formValid;
-    let dobError = this.state.error.emailError;
+    let formIsValid = this.state.formIsValid;
+    let dobError = this.state.error.dobError;
     let today = new Date(Date.now());
     let dobInput = new Date(dob);
 
@@ -96,7 +96,7 @@ class Form extends Component {
   }
 
   validateEmail = (email) => {
-    let formIsValid = this.state.formValid;
+    let formIsValid = this.state.formIsValid;
     let emailError = this.state.error.emailError;
 
     let pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -122,7 +122,7 @@ class Form extends Component {
   };
 
   validateContact = (contact) => {
-    let formIsValid = this.state.formValid;
+    let formIsValid = this.state.formIsValid;
     let contactError = this.state.error.contactError;
     let numbers = /^[0-9]*$/;
     let alphabets = /^[A-Za-z]+$/;
@@ -157,8 +157,8 @@ class Form extends Component {
   };
 
   validateAbout(about) {
-    let formIsValid = this.state.formValid;
-    let aboutError = this.state.error.contactError;
+    let formIsValid = this.state.formIsValid;
+    let aboutError = this.state.error.aboutError;
 
     if (about.trim() == "") {
       formIsValid = false;
@@ -170,6 +170,7 @@ class Form extends Component {
 
     this.setState({
       about,
+      formIsValid,
       error: { ...this.state.aboutError, aboutError },
     });
 
